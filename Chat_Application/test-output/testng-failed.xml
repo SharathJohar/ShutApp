@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Automation Test]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Smoke Test(failed)">
     <classes>
-      <class name="com.shutapp.createsession.AppiumServer">
+      <class name="com.shutapp.loginflow.AppiumServer">
         <methods>
-          <include name="startServer"/>
-          <include name="stopServer"/>
           <include name="MobileNumber"/>
+          <include name="stopServer"/>
+          <include name="startServer"/>
+          <include name="EnterUserName"/>
+          <include name="ShutModes"/>
+          <include name="WelCome"/>
         </methods>
-      </class> <!-- com.shutapp.createsession.AppiumServer -->
+      </class> <!-- com.shutapp.loginflow.AppiumServer -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Smoke Test(failed) -->
+</suite> <!-- Failed suite [Automation Test] -->

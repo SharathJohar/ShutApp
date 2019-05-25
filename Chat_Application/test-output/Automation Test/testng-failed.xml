@@ -3,13 +3,16 @@
 <suite name="Failed suite [Automation Test]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Smoke Test(failed)">
     <classes>
-      <class name="com.dbst.createsession.ShutMode">
+      <class name="com.shutapp.loginflow.AppiumServer">
         <methods>
-          <include name="ShutModes"/>
-          <include name="startServer"/>
+          <include name="MobileNumber"/>
           <include name="stopServer"/>
+          <include name="startServer"/>
+          <include name="EnterUserName"/>
+          <include name="ShutModes"/>
+          <include name="WelCome"/>
         </methods>
-      </class> <!-- com.dbst.createsession.ShutMode -->
+      </class> <!-- com.shutapp.loginflow.AppiumServer -->
     </classes>
   </test> <!-- Smoke Test(failed) -->
 </suite> <!-- Failed suite [Automation Test] -->
