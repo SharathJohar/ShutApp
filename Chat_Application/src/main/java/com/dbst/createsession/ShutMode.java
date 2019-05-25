@@ -19,7 +19,7 @@ import io.appium.java_client.android.AndroidElement;
  */
 public class ShutMode extends WelCome {
 	@Test
-	public void ShutModes() throws MalformedURLException, InterruptedException {
+	public AndroidDriver<AndroidElement> ShutModes() throws MalformedURLException, InterruptedException {
 		AndroidDriver<AndroidElement> driver = WelCome();
 		MobileElement ShutMode = driver.findElementByXPath("//android.widget.TextView[@text='Shut Mode']");
 		String Shut = ShutMode.getText();
@@ -41,18 +41,20 @@ public class ShutMode extends WelCome {
 				"//android.widget.Button[@resource-id='in.dbst.shutappv1.dev:id/welcome_modes_fragment_btn_setlock']")
 				.click();
 		System.out.println("Clicked on Set Lock");
-		
+
 		driver.findElementById("in.dbst.shutappv1.dev:id/shut_mode_activity_pin_input_show").sendKeys("1111");
 		driver.hideKeyboard();
 		driver.findElementById("in.dbst.shutappv1.dev:id/tb_dialpad_done").click();
-		driver.findElementById("in.dbst.shutappv1.dev:id/shut_mode_activity_pin_input_show").sendKeys("1181");
+		driver.findElementById("in.dbst.shutappv1.dev:id/shut_mode_activity_pin_input_show").sendKeys("1111");
 		driver.hideKeyboard();
 		driver.findElementById("in.dbst.shutappv1.dev:id/tb_dialpad_done").click();
-		WebElement toastView = driver.findElementByXPath("//android.widget.Toast[1]");
-		String text = toastView.getAttribute("name");
-		System.out.println("Tost Message is : "+text);
-//		System.out.println("Welcome to ShutApp Recent Chats");
-
+//		WebElement toastView = driver.findElementByXPath("//android.widget.Toast[1]");
+//		String text = toastView.getAttribute("name");
+//		System.out.println("Tost Message is : " + text);
+		driver.findElementById("com.android.packageinstaller:id/permission_allow_button").click();
+		System.out.println("Welcome to ShutApp Recent Chats");
+		return driver;
+		
 	}
 
 }

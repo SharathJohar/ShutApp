@@ -25,9 +25,9 @@ public class EnterYourName extends AddPhoneNumber {
 
 		AndroidDriver<AndroidElement> driver = MobileNumber();
 
-		WebElement toastView = driver.findElementByXPath("//android.widget.Toast[1]");
-		String text = toastView.getAttribute("name");
-		System.out.println("Tost Message is : " + text);
+//		WebElement toastView = driver.findElementByXPath("//android.widget.Toast[1]");
+//		String text = toastView.getAttribute("name");
+//		System.out.println("Tost Message is : " + text);
 		driver.findElementById("in.dbst.shutappv1.dev:id/user_name_text").sendKeys("Sharath");
 		System.out.println("User Name Entered");
 		Thread.sleep(3000);

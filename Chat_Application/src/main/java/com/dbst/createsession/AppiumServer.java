@@ -32,7 +32,7 @@ public class AppiumServer {
 		}
 	}
 
-	@AfterSuite
+//	@AfterSuite
 	//	This will Stop Appium Automatically
 	public void stopServer() {
 		Runtime runtime = Runtime.getRuntime();
