@@ -1,10 +1,11 @@
-package com.shutapp.createsession;
+package com.shutapp.loginflow;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
@@ -13,12 +14,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 /**
@@ -56,7 +59,7 @@ public class AppiumServer {
 		}
 	}
 
-	@Test(priority = 1)
+	@BeforeTest
 	public void Capabilities() throws MalformedURLException {
 
 		DesiredCapabilities cap = new DesiredCapabilities();
@@ -65,6 +68,7 @@ public class AppiumServer {
 		cap.setCapability("platformVersion", "9");
 		cap.setCapability("platformName", "Android");
 		cap.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "in.dbst.shutappv1.dev");
+		cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
 		cap.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,
 				"in.dbst.shutappv1.ui.components.launcher.ActivityLauncher");
 		driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
@@ -73,7 +77,7 @@ public class AppiumServer {
 
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 1)
 	public void MobileNumber() throws MalformedURLException {
 
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -91,7 +95,7 @@ public class AppiumServer {
 
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 2)
 	public void EnterUserName() throws MalformedURLException, InterruptedException {
 
 //		WebElement toastView = driver.findElementByXPath("//android.widget.Toast[1]");
@@ -164,7 +168,7 @@ public class AppiumServer {
 	 * @return
 	 */
 
-	@Test(priority = 4)
+	@Test(priority = 3)
 	public void WelCome() throws MalformedURLException, InterruptedException {
 
 		MobileElement welcome = driver.findElementByXPath("//android.widget.TextView[@text='WELCOME']");
@@ -181,7 +185,7 @@ public class AppiumServer {
 
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 4)
 	public void ShutModes() throws MalformedURLException, InterruptedException {
 
 		MobileElement ShutMode = driver.findElementByXPath("//android.widget.TextView[@text='Shut Mode']");

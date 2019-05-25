@@ -3,7 +3,7 @@
 <suite name ="Automation Test">
 		<test name= "Smoke Test">
 			<packages>
-					<package name="com.dbst.createsession"/>
+					<package name="com.shutapp.loginflow"/>
 			</packages>
 		</test>    <!-- Test -->	
 </suite>           <!-- Suite -->
