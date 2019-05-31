@@ -4,17 +4,17 @@
 package com.shutapp.sendBulkmessage;
 
 import java.net.MalformedURLException;
+
 import org.openqa.selenium.WebElement;
+
 import org.testng.annotations.Test;
 
 import io.appium.java_client.MobileElement;
 
-//import com.dbst.createsession.AppiumServer;
-
 import io.appium.java_client.android.AndroidDriver;
+
 import io.appium.java_client.android.AndroidElement;
 
-//import com.shutapp.sendBulkmessage.*;
 import com.shutapp.loginflow.*;
 
 /**
@@ -66,13 +66,13 @@ public class CreatePrivateGroup extends AppiumServer {
 		System.out.println("Group successfully created");
 		//////////////////////////////////////////////////////////
 
-//		WebElement Text = driver.findElementById("in.dbst.shutappv1.dev:id/chat_message_text_box_input");
-//		WebElement Send = driver.findElementById("in.dbst.shutappv1.dev:id/chat_message_send_fab");
-//		for (int i = 0; i < 5; i++) {
-//			Text.sendKeys("Hello World! Don't Panik");
-//			Send.click();
-//		}
-//		System.out.println("Text Messages sent Successfully");
+		WebElement Text = driver.findElementById("in.dbst.shutappv1.dev:id/chat_message_text_box_input");
+		WebElement Send = driver.findElementById("in.dbst.shutappv1.dev:id/chat_message_send_fab");
+		for (int i = 0; i < 10; i++) {
+			Text.sendKeys("Hello World! Don't Panik");
+			Send.click();
+		}
+		System.out.println("Text Messages sent Successfully");
 
 	}
 
@@ -88,18 +88,19 @@ public class CreatePrivateGroup extends AppiumServer {
 			Send.click();
 		}
 
-		MobileElement ttlmessage1 = driver.findElementByXPath("//android.widget.TextView[@text='Hello ShutApp Team!']");
-		String ttl1 = ttlmessage1.getText();
-		System.out.println("text is: " + ttl1);
+		MobileElement AutoDelete_Message = driver
+				.findElementByXPath("//android.widget.TextView[@text='Hello ShutApp Team!']");
+		String TTL = AutoDelete_Message.getText();
+		System.out.println("text is: " + TTL);
 		Thread.sleep(25000);
 
 		try {
 			driver.findElementById("in.dbst.shutappv1.dev:id/chat_bubble_message_text");
-			System.out.println("Fail");
+			System.out.println("AutoDelete Not Working as Expected");
 
 		} catch (Exception e) {
 
-			System.out.println("pass");
+			System.out.println("AutoDelete Working as Expected");
 		}
 
 	}

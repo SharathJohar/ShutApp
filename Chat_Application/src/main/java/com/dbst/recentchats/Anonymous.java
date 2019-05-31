@@ -6,6 +6,7 @@ package com.dbst.recentchats;
 import java.net.MalformedURLException;
 
 import io.appium.java_client.android.AndroidDriver;
+
 import io.appium.java_client.android.AndroidElement;
 
 /**

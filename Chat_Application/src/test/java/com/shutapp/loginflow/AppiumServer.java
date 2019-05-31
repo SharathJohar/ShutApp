@@ -1,28 +1,43 @@
 package com.shutapp.loginflow;
 
 import java.io.IOException;
+
 import java.net.MalformedURLException;
+
 import java.net.URL;
+
 import java.util.NoSuchElementException;
+
 import java.util.concurrent.TimeUnit;
 
-import org.junit.BeforeClass;
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.TimeoutException;
+
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterSuite;
+
 import org.testng.annotations.BeforeSuite;
+
 import org.testng.annotations.BeforeTest;
+
 import org.testng.annotations.Test;
 
 import io.appium.java_client.MobileElement;
+
 import io.appium.java_client.android.AndroidDriver;
+
 import io.appium.java_client.android.AndroidElement;
+
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
+
 import io.appium.java_client.remote.AutomationName;
+
 import io.appium.java_client.remote.MobileCapabilityType;
 
 /**
@@ -64,7 +79,7 @@ public class AppiumServer {
 	public void Capabilities() throws MalformedURLException {
 
 		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "4da52af");//2628f10a7cf6
+		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "4da52af");// 2628f10a7cf6
 		cap.setCapability("deviceName", "Mi A2");
 		cap.setCapability("platformVersion", "9");
 		cap.setCapability("platformName", "Android");
@@ -80,7 +95,7 @@ public class AppiumServer {
 
 	@Test(priority = 1)
 	public void MobileNumber() throws MalformedURLException, InterruptedException {
-		if ( driver == null ) {
+		if (driver == null) {
 			Capabilities();
 		}
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -101,18 +116,6 @@ public class AppiumServer {
 			IndSelect.click();
 			System.out.println("Zimbabwe");
 		}
-
-//		if (scrollIntoView.isDisplayed()) {
-//			IndSelect.click();
-//			System.out.println("Country Selected");
-//
-//		} else if (scrollIntoView1.isDisplayed()) {
-//			search.click();
-//			search.sendKeys("India");
-//			IndSelect.click();
-//			System.out.println("Zimbabwe");
-//
-//		}
 
 		driver.findElementById("in.dbst.shutappv1.dev:id/input").sendKeys("9901580697");
 		WebElement next = driver.findElementById("in.dbst.shutappv1.dev:id/action_next");
@@ -253,10 +256,10 @@ public class AppiumServer {
 //		System.out.println("Toast Message is : " + text);
 		driver.findElementById("com.android.packageinstaller:id/permission_allow_button").click();
 		System.out.println("Welcome to ShutApp Recent Chats");
-		
+
 	}
-	
-	public AndroidDriver<AndroidElement> fetch_driver(){
+
+	public AndroidDriver<AndroidElement> fetch_driver() {
 //		AndroidDriver<AndroidElement> mydriver = driver;
 		return driver;
 	}

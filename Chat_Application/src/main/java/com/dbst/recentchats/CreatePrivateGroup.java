@@ -4,12 +4,13 @@
 package com.dbst.recentchats;
 
 import java.net.MalformedURLException;
+
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
 
 import com.dbst.createsession.ShutMode;
 
 import io.appium.java_client.android.AndroidDriver;
+
 import io.appium.java_client.android.AndroidElement;
 
 /**
@@ -18,7 +19,7 @@ import io.appium.java_client.android.AndroidElement;
  * 
  */
 public class CreatePrivateGroup extends ShutMode {
-	
+
 	public AndroidDriver<AndroidElement> CreateGroup() throws MalformedURLException, InterruptedException {
 		AndroidDriver<AndroidElement> driver = ShutModes();
 		driver.findElementById("in.dbst.shutappv1.dev:id/new_chat").click();
