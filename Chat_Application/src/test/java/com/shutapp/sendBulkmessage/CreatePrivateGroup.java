@@ -83,7 +83,7 @@ public class CreatePrivateGroup extends AppiumServer {
 		driver.findElementById("in.dbst.shutappv1.dev:id/btn_ok").click();
 		WebElement Text = driver.findElementById("in.dbst.shutappv1.dev:id/chat_message_text_box_input");
 		WebElement Send = driver.findElementById("in.dbst.shutappv1.dev:id/chat_message_send_fab");
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 10; i++) {
 			Text.sendKeys("Hello ShutApp Team!");
 			Send.click();
 		}
@@ -98,23 +98,10 @@ public class CreatePrivateGroup extends AppiumServer {
 			System.out.println("Fail");
 
 		} catch (Exception e) {
-			
+
 			System.out.println("pass");
 		}
 
 	}
 
-//		MobileElement ttlmessage = driver.findElementByXPath("//android.widget.TextView[@text='Hello']");
-//		String ttl = ttlmessage.getText();
-//		System.out.println("text is: " + ttl);
-//		Thread.sleep(25000);
-//		MobileElement recyclerview = driver.findElementById("in.dbst.shutappv1.dev:id/recyclerview");
-//		
-//		try {
-//			recyclerview.isDisplayed();
-//			System.out.println("Autodelete working");
-//		} catch (NoSuchElementException e) {
-//			driver.findElementById("in.dbst.shutappv1.dev:id/recyclerview");
-//			System.out.println("Autodelete Not working");
-//		}
 }

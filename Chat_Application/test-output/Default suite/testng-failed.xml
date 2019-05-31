@@ -3,13 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.shutapp.createsession.AppiumServer">
+      <class name="com.shutapp.sendBulkmessage.CreatePrivateGroup">
         <methods>
-          <include name="startServer"/>
-          <include name="stopServer"/>
           <include name="MobileNumber"/>
+          <include name="startServer"/>
+          <include name="Capabilities"/>
+          <include name="EnterUserName"/>
+          <include name="AutoDelete"/>
+          <include name="ShutModes"/>
+          <include name="WelCome"/>
+          <include name="CreateGroup"/>
         </methods>
-      </class> <!-- com.shutapp.createsession.AppiumServer -->
+      </class> <!-- com.shutapp.sendBulkmessage.CreatePrivateGroup -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

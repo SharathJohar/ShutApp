@@ -3,16 +3,16 @@
 <suite name="Failed suite [Automation Test]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Smoke Test(failed)">
     <classes>
-      <class name="com.shutapp.loginflow.AppiumServer">
+      <class name="com.shutapp.sendBulkmessage.CreatePrivateGroup">
         <methods>
-          <include name="MobileNumber"/>
-          <include name="stopServer"/>
           <include name="startServer"/>
+          <include name="Capabilities"/>
           <include name="EnterUserName"/>
           <include name="ShutModes"/>
           <include name="WelCome"/>
+          <include name="CreateGroup"/>
         </methods>
-      </class> <!-- com.shutapp.loginflow.AppiumServer -->
+      </class> <!-- com.shutapp.sendBulkmessage.CreatePrivateGroup -->
     </classes>
   </test> <!-- Smoke Test(failed) -->
 </suite> <!-- Failed suite [Automation Test] -->
