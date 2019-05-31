@@ -3,6 +3,7 @@ package com.shutapp.loginflow;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.BeforeClass;
@@ -30,7 +31,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
  * 
  */
 public class AppiumServer {
-	AndroidDriver<AndroidElement> driver;
+	public AndroidDriver<AndroidElement> driver;
 
 	// This method will start Appium server through command prompt
 	@BeforeSuite
@@ -47,7 +48,7 @@ public class AppiumServer {
 	}
 
 	// This method will Stop Appium server through command prompt
-	@AfterSuite
+//	@AfterSuite
 	public void stopServer() {
 		Runtime runtime = Runtime.getRuntime();
 		try {
@@ -63,7 +64,7 @@ public class AppiumServer {
 	public void Capabilities() throws MalformedURLException {
 
 		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "4da52af");
+		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "4da52af");//2628f10a7cf6
 		cap.setCapability("deviceName", "Mi A2");
 		cap.setCapability("platformVersion", "9");
 		cap.setCapability("platformName", "Android");
@@ -78,9 +79,41 @@ public class AppiumServer {
 	}
 
 	@Test(priority = 1)
-	public void MobileNumber() throws MalformedURLException {
-
+	public void MobileNumber() throws MalformedURLException, InterruptedException {
+		if ( driver == null ) {
+			Capabilities();
+		}
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.findElementById("in.dbst.shutappv1.dev:id/country_code").click();
+		MobileElement scrollIntoView = driver.findElementByAndroidUIAutomator(
+				"new UiScrollable(new UiSelector()).scrollIntoView(text(\"India (IN)\"));");
+		MobileElement IndSelect = driver.findElementByXPath("//android.widget.TextView[@text='India (IN)']");
+		MobileElement search = driver.findElementByXPath(
+				"//android.widget.EditText[@resource-id='in.dbst.shutappv1.dev:id/editText_search']");
+
+		try {
+			scrollIntoView.isDisplayed();
+			IndSelect.click();
+			System.out.println("Country Selected");
+		} catch (NoSuchElementException e) {
+			search.click();
+			search.sendKeys("India");
+			IndSelect.click();
+			System.out.println("Zimbabwe");
+		}
+
+//		if (scrollIntoView.isDisplayed()) {
+//			IndSelect.click();
+//			System.out.println("Country Selected");
+//
+//		} else if (scrollIntoView1.isDisplayed()) {
+//			search.click();
+//			search.sendKeys("India");
+//			IndSelect.click();
+//			System.out.println("Zimbabwe");
+//
+//		}
+
 		driver.findElementById("in.dbst.shutappv1.dev:id/input").sendKeys("9901580697");
 		WebElement next = driver.findElementById("in.dbst.shutappv1.dev:id/action_next");
 
@@ -217,10 +250,15 @@ public class AppiumServer {
 		driver.findElementById("in.dbst.shutappv1.dev:id/tb_dialpad_done").click();
 //		WebElement toastView = driver.findElementByXPath("//android.widget.Toast[1]");
 //		String text = toastView.getAttribute("name");
-//		System.out.println("Tost Message is : " + text);
+//		System.out.println("Toast Message is : " + text);
 		driver.findElementById("com.android.packageinstaller:id/permission_allow_button").click();
 		System.out.println("Welcome to ShutApp Recent Chats");
-
+		
+	}
+	
+	public AndroidDriver<AndroidElement> fetch_driver(){
+//		AndroidDriver<AndroidElement> mydriver = driver;
+		return driver;
 	}
 
 }

@@ -1,27 +1,40 @@
 /**
  * 
  */
-package com.dbst.recentchats;
+package com.shutapp.sendBulkmessage;
 
 import java.net.MalformedURLException;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import com.dbst.createsession.ShutMode;
+import io.appium.java_client.MobileElement;
+
+//import com.dbst.createsession.AppiumServer;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+
+//import com.shutapp.sendBulkmessage.*;
+import com.shutapp.loginflow.*;
 
 /**
  * @author SHARATH
  *
  * 
  */
-public class CreatePrivateGroup extends ShutMode {
-	
-	public AndroidDriver<AndroidElement> CreateGroup() throws MalformedURLException, InterruptedException {
-		AndroidDriver<AndroidElement> driver = ShutModes();
+public class CreatePrivateGroup extends AppiumServer {
+
+	public AndroidDriver<AndroidElement> mydriver;
+
+	@Test(priority = 5)
+
+	public void CreateGroup() throws MalformedURLException, InterruptedException {
+
+		AndroidDriver<AndroidElement> driver = fetch_driver();
+
 		driver.findElementById("in.dbst.shutappv1.dev:id/new_chat").click();
+		Thread.sleep(3000);
+
 		driver.findElementByXPath(
 				"//android.widget.LinearLayout[@resource-id='in.dbst.shutappv1.dev:id/private_group_create']").click();
 		Thread.sleep(5000);
@@ -34,7 +47,7 @@ public class CreatePrivateGroup extends ShutMode {
 		driver.findElementByXPath("//android.widget.TextView[@text='Saourab ober'] ").click();
 		System.out.println("Memebers addedd successfully");
 		driver.findElementById("in.dbst.shutappv1.dev:id/create_group_next").click();
-		driver.findElementById("in.dbst.shutappv1.dev:id/input").sendKeys("Bulk Images Done");
+		driver.findElementById("in.dbst.shutappv1.dev:id/input").sendKeys("Biggi Buggi");
 		driver.findElementById("in.dbst.shutappv1.dev:id/group_name_next").click();
 		driver.findElementById("in.dbst.shutappv1.dev:id/add_image").click();
 //		driver.findElementById("in.dbst.shutappv1.dev:id/chat_attachment_dialog_btn_camera").click();
@@ -45,6 +58,7 @@ public class CreatePrivateGroup extends ShutMode {
 //		System.out.println("click on Done");
 		driver.findElementById("in.dbst.shutappv1.dev:id/chat_attachment_dialog_btn_gallery").click();
 		System.out.println("Gallery selected");
+
 		driver.findElementByXPath("//android.widget.LinearLayout[@index='2']").click();
 		System.out.println("Image uploading");
 		Thread.sleep(4000);
@@ -52,13 +66,55 @@ public class CreatePrivateGroup extends ShutMode {
 		System.out.println("Group successfully created");
 		//////////////////////////////////////////////////////////
 
+//		WebElement Text = driver.findElementById("in.dbst.shutappv1.dev:id/chat_message_text_box_input");
+//		WebElement Send = driver.findElementById("in.dbst.shutappv1.dev:id/chat_message_send_fab");
+//		for (int i = 0; i < 5; i++) {
+//			Text.sendKeys("Hello World! Don't Panik");
+//			Send.click();
+//		}
+//		System.out.println("Text Messages sent Successfully");
+
+	}
+
+	@Test(priority = 6)
+	public void AutoDelete() throws MalformedURLException, InterruptedException {
+
+		driver.findElementById("in.dbst.shutappv1.dev:id/chat_message_box_mode_ttl_checkable").click();
+		driver.findElementById("in.dbst.shutappv1.dev:id/btn_ok").click();
 		WebElement Text = driver.findElementById("in.dbst.shutappv1.dev:id/chat_message_text_box_input");
 		WebElement Send = driver.findElementById("in.dbst.shutappv1.dev:id/chat_message_send_fab");
 		for (int i = 0; i < 5; i++) {
-			Text.sendKeys("When you can’t find the sunshine, be the sunshine!");
+			Text.sendKeys("Hello ShutApp Team!");
 			Send.click();
 		}
-		System.out.println("Text Messages sent Successfully");
-		return driver;
+
+		MobileElement ttlmessage1 = driver.findElementByXPath("//android.widget.TextView[@text='Hello ShutApp Team!']");
+		String ttl1 = ttlmessage1.getText();
+		System.out.println("text is: " + ttl1);
+		Thread.sleep(25000);
+
+		try {
+			driver.findElementById("in.dbst.shutappv1.dev:id/chat_bubble_message_text");
+			System.out.println("Fail");
+
+		} catch (Exception e) {
+			
+			System.out.println("pass");
+		}
+
 	}
+
+//		MobileElement ttlmessage = driver.findElementByXPath("//android.widget.TextView[@text='Hello']");
+//		String ttl = ttlmessage.getText();
+//		System.out.println("text is: " + ttl);
+//		Thread.sleep(25000);
+//		MobileElement recyclerview = driver.findElementById("in.dbst.shutappv1.dev:id/recyclerview");
+//		
+//		try {
+//			recyclerview.isDisplayed();
+//			System.out.println("Autodelete working");
+//		} catch (NoSuchElementException e) {
+//			driver.findElementById("in.dbst.shutappv1.dev:id/recyclerview");
+//			System.out.println("Autodelete Not working");
+//		}
 }

@@ -3,7 +3,7 @@
 <suite name ="Automation Test">
 		<test name= "Smoke Test">
 			<packages>
-					<package name="com.shutapp.loginflow"/>
+					<package name="com.shutapp.sendBulkmessage"/>
 			</packages>
 		</test>    <!-- Test -->	
 </suite>           <!-- Suite -->

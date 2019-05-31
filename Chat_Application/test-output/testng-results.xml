@@ -1,41 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-05-25T06:57:48Z" name="Automation Test" finished-at="2019-05-25T06:59:35Z" duration-ms="107012">
+  <suite started-at="2019-05-31T10:42:44Z" name="Default suite" finished-at="2019-05-31T10:45:43Z" duration-ms="179418">
     <groups>
     </groups>
-    <test started-at="2019-05-25T06:57:48Z" name="Smoke Test" finished-at="2019-05-25T06:59:35Z" duration-ms="107012">
-      <class name="com.shutapp.loginflow.AppiumServer">
-        <test-method is-config="true" signature="startServer()[pri:0, instance:com.shutapp.loginflow.AppiumServer@ec756bd]" started-at="2019-05-25T06:57:38Z" name="startServer" finished-at="2019-05-25T06:57:48Z" duration-ms="10016" status="PASS">
+    <test started-at="2019-05-31T10:42:44Z" name="Default test" finished-at="2019-05-31T10:45:43Z" duration-ms="179418">
+      <class name="com.shutapp.sendBulkmessage.CreatePrivateGroup">
+        <test-method is-config="true" signature="startServer()[pri:0, instance:com.shutapp.sendBulkmessage.CreatePrivateGroup@3cc2931c]" started-at="2019-05-31T10:42:34Z" name="startServer" finished-at="2019-05-31T10:42:44Z" duration-ms="10034" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startServer -->
-        <test-method is-config="true" signature="Capabilities()[pri:0, instance:com.shutapp.loginflow.AppiumServer@ec756bd]" started-at="2019-05-25T06:57:48Z" name="Capabilities" finished-at="2019-05-25T06:57:59Z" duration-ms="11613" status="PASS">
+        <test-method is-config="true" signature="Capabilities()[pri:0, instance:com.shutapp.sendBulkmessage.CreatePrivateGroup@3cc2931c]" started-at="2019-05-31T10:42:44Z" name="Capabilities" finished-at="2019-05-31T10:42:58Z" duration-ms="14158" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Capabilities -->
-        <test-method signature="MobileNumber()[pri:1, instance:com.shutapp.loginflow.AppiumServer@ec756bd]" started-at="2019-05-25T06:57:59Z" name="MobileNumber" finished-at="2019-05-25T06:58:09Z" duration-ms="9480" status="PASS">
+        <test-method signature="MobileNumber()[pri:1, instance:com.shutapp.sendBulkmessage.CreatePrivateGroup@3cc2931c]" started-at="2019-05-31T10:42:58Z" name="MobileNumber" finished-at="2019-05-31T10:43:26Z" duration-ms="28470" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MobileNumber -->
-        <test-method signature="EnterUserName()[pri:2, instance:com.shutapp.loginflow.AppiumServer@ec756bd]" started-at="2019-05-25T06:58:09Z" name="EnterUserName" finished-at="2019-05-25T06:59:09Z" duration-ms="59659" status="PASS">
+        <test-method signature="EnterUserName()[pri:2, instance:com.shutapp.sendBulkmessage.CreatePrivateGroup@3cc2931c]" started-at="2019-05-31T10:43:26Z" name="EnterUserName" finished-at="2019-05-31T10:44:12Z" duration-ms="45894" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterUserName -->
-        <test-method signature="WelCome()[pri:3, instance:com.shutapp.loginflow.AppiumServer@ec756bd]" started-at="2019-05-25T06:59:09Z" name="WelCome" finished-at="2019-05-25T06:59:12Z" duration-ms="3062" status="PASS">
+        <test-method signature="WelCome()[pri:3, instance:com.shutapp.sendBulkmessage.CreatePrivateGroup@3cc2931c]" started-at="2019-05-31T10:44:12Z" name="WelCome" finished-at="2019-05-31T10:44:16Z" duration-ms="3365" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- WelCome -->
-        <test-method signature="ShutModes()[pri:4, instance:com.shutapp.loginflow.AppiumServer@ec756bd]" started-at="2019-05-25T06:59:12Z" name="ShutModes" finished-at="2019-05-25T06:59:35Z" duration-ms="23155" status="PASS">
+        <test-method signature="ShutModes()[pri:4, instance:com.shutapp.sendBulkmessage.CreatePrivateGroup@3cc2931c]" started-at="2019-05-31T10:44:16Z" name="ShutModes" finished-at="2019-05-31T10:44:26Z" duration-ms="9838" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ShutModes -->
-        <test-method is-config="true" signature="stopServer()[pri:0, instance:com.shutapp.loginflow.AppiumServer@ec756bd]" started-at="2019-05-25T06:59:35Z" name="stopServer" finished-at="2019-05-25T06:59:35Z" duration-ms="5" status="PASS">
+        <test-method signature="CreateGroup()[pri:5, instance:com.shutapp.sendBulkmessage.CreatePrivateGroup@3cc2931c]" started-at="2019-05-31T10:44:26Z" name="CreateGroup" finished-at="2019-05-31T10:45:01Z" duration-ms="35902" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- stopServer -->
-      </class> <!-- com.shutapp.loginflow.AppiumServer -->
-    </test> <!-- Smoke Test -->
-  </suite> <!-- Automation Test -->
+        </test-method> <!-- CreateGroup -->
+        <test-method signature="AutoDelete()[pri:6, instance:com.shutapp.sendBulkmessage.CreatePrivateGroup@3cc2931c]" started-at="2019-05-31T10:45:01Z" name="AutoDelete" finished-at="2019-05-31T10:45:43Z" duration-ms="41758" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AutoDelete -->
+      </class> <!-- com.shutapp.sendBulkmessage.CreatePrivateGroup -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

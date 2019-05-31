@@ -25,7 +25,7 @@ public class CreateDriver extends AppiumServer {
 
 		//This will Create the Android Driver and Launch the Application using App Package & App Activity.
 		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "4da52af");// 5200963ffad2748b - Samsung J7
+		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "4da52af");// 5200963ffad2748b - Samsung J7 mia2 -4da52af
 		cap.setCapability("deviceName", "Mi A2");
 		cap.setCapability("platformVersion", "9");
 		cap.setCapability("platformName", "Android");
