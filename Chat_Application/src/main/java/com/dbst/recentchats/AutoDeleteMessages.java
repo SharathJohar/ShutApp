@@ -21,9 +21,9 @@ import io.appium.java_client.android.AndroidElement;
  * 
  */
 public class AutoDeleteMessages extends BulkVideos {
-	@Test
 
-	public void AutoDelete() throws MalformedURLException, InterruptedException {
+	public AndroidDriver<AndroidElement> AutoDelete() throws MalformedURLException, InterruptedException {
+		
 		AndroidDriver<AndroidElement> driver = BulkVideo();
 		driver.findElementById("in.dbst.shutappv1.dev:id/chat_message_box_mode_ttl_checkable").click();
 		driver.findElementById("in.dbst.shutappv1.dev:id/btn_ok").click();
@@ -34,9 +34,15 @@ public class AutoDeleteMessages extends BulkVideos {
 			Send.click();
 		}
 		Thread.sleep(25000);
-		MobileElement welcome = driver.findElementByXPath("//android.widget.TextView[@index='0']");
-		String ttl = welcome.getText();
-		System.out.println("text is: " + ttl);
+		try {
+			driver.findElementById("in.dbst.shutappv1.dev:id/chat_bubble_message_text");
+			System.out.println("AutoDelete Not Working as Expected");
+
+		} catch (Exception e) {
+
+			System.out.println("AutoDelete Working as Expected");
+		}
+		return driver;
 	}
 
 }

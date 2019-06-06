@@ -134,9 +134,9 @@ public class AppiumServer {
 	@Test(priority = 2)
 	public void EnterUserName() throws MalformedURLException, InterruptedException {
 
-//		WebElement toastView = driver.findElementByXPath("//android.widget.Toast[1]");
-//		String text = toastView.getAttribute("name");
-//		System.out.println("Tost Message is : " + text);
+		WebElement toastView = driver.findElementByXPath("//android.widget.Toast[1]");
+		String text = toastView.getAttribute("name");
+		System.out.println("Tost Message is : " + text);
 		driver.findElementById("in.dbst.shutappv1.dev:id/user_name_text").sendKeys("Sharath");
 		System.out.println("User Name Entered");
 		Thread.sleep(3000);
@@ -162,11 +162,11 @@ public class AppiumServer {
 		boolean flag = true;
 
 		try {
-			new WebDriverWait(driver, 60).until(ExpectedConditions
+			new WebDriverWait(driver, 10).until(ExpectedConditions
 					.invisibilityOfElementLocated(By.id("in.dbst.shutappv1.dev:id/dp_image_progressbar")));
 			System.out.println("Image uploaded");
 		} catch (TimeoutException e) {
-			System.out.println("Image not uploaded in 60 sec");
+			System.out.println("Image not uploaded in 10 sec");
 		}
 
 		WebElement next = driver.findElementById("in.dbst.shutappv1.dev:id/action_next");
@@ -178,26 +178,6 @@ public class AppiumServer {
 			System.out.println("next button is not clickable");
 		}
 
-//		if (next.isEnabled()) {
-//			System.out.println("Next Button is Enabled");
-//			next.click();
-//		} else {
-//			System.out.println("Next Button not  Enabled");
-//
-//		}
-//		if (driver.findElementById("in.dbst.shutappv1.dev:id/dp_image_progressbar").isDisplayed()
-//				&& driver.findElementById("in.dbst.shutappv1.dev:id/action_next").isEnabled()) {
-//			WebElement next = driver.findElementById("in.dbst.shutappv1.dev:id/action_next");
-//			next.click();
-//			System.out.println("Image Uploaded successfully");
-//
-//		} else {
-//			System.out.println("Image not uploaded");
-//		}
-
-//		in.dbst.shutappv1.dev:id/dp_image_progressbar
-//		android.widget.ProgressBar
-//		in.dbst.shutappv1.dev
 	}
 
 	/**

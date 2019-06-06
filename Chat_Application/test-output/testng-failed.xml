@@ -5,13 +5,8 @@
     <classes>
       <class name="com.shutapp.sendBulkmessage.CreatePrivateGroup">
         <methods>
-          <include name="MobileNumber"/>
           <include name="startServer"/>
           <include name="Capabilities"/>
-          <include name="EnterUserName"/>
-          <include name="AutoDelete"/>
-          <include name="ShutModes"/>
-          <include name="WelCome"/>
           <include name="CreateGroup"/>
         </methods>
       </class> <!-- com.shutapp.sendBulkmessage.CreatePrivateGroup -->
