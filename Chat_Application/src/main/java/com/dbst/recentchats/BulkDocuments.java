@@ -19,7 +19,7 @@ import io.appium.java_client.android.AndroidElement;
  */
 public class BulkDocuments extends BulkAudio {
 	@Test
-	public void BulkDocument() throws MalformedURLException, InterruptedException {
+	public AndroidDriver<AndroidElement> BulkDocument() throws MalformedURLException, InterruptedException {
 		AndroidDriver<AndroidElement> driver = BulkAudios();
 		driver.findElementById("in.dbst.shutappv1.dev:id/chat_message_box_action_attachments").click();
 		driver.findElementById("in.dbst.shutappv1.dev:id/chat_attachment_dialog_btn_document").click();
@@ -36,6 +36,6 @@ public class BulkDocuments extends BulkAudio {
 		list.get(8).click();
 		driver.findElementById("in.dbst.shutappv1.dev:id/okBtn").click();
 		driver.findElementById("in.dbst.shutappv1.dev:id/ok").click();
-
+		return driver;
 	}
 }

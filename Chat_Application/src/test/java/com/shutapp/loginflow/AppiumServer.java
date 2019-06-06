@@ -79,9 +79,9 @@ public class AppiumServer {
 	public void Capabilities() throws MalformedURLException {
 
 		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "4da52af");// 2628f10a7cf6
-		cap.setCapability("deviceName", "Mi A2");
-		cap.setCapability("platformVersion", "9");
+		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "2628f10a7cf6");//  4da52af
+		cap.setCapability("deviceName", "Galaxy J7 Prime");//Mi A2
+		cap.setCapability("platformVersion", "8.1.0");
 		cap.setCapability("platformName", "Android");
 		cap.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "in.dbst.shutappv1.dev");
 		cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
@@ -100,6 +100,7 @@ public class AppiumServer {
 		}
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.findElementById("in.dbst.shutappv1.dev:id/country_code").click();
+		driver.hideKeyboard();
 		MobileElement scrollIntoView = driver.findElementByAndroidUIAutomator(
 				"new UiScrollable(new UiSelector()).scrollIntoView(text(\"India (IN)\"));");
 		MobileElement IndSelect = driver.findElementByXPath("//android.widget.TextView[@text='India (IN)']");
@@ -117,7 +118,7 @@ public class AppiumServer {
 			System.out.println("Zimbabwe");
 		}
 
-		driver.findElementById("in.dbst.shutappv1.dev:id/input").sendKeys("9901580697");
+		driver.findElementById("in.dbst.shutappv1.dev:id/input").sendKeys("9606048675");
 		WebElement next = driver.findElementById("in.dbst.shutappv1.dev:id/action_next");
 
 		if (next.isEnabled()) {
@@ -133,7 +134,7 @@ public class AppiumServer {
 
 	@Test(priority = 2)
 	public void EnterUserName() throws MalformedURLException, InterruptedException {
-
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		WebElement toastView = driver.findElementByXPath("//android.widget.Toast[1]");
 		String text = toastView.getAttribute("name");
 		System.out.println("Tost Message is : " + text);
@@ -147,6 +148,7 @@ public class AppiumServer {
 		driver.findElementById("in.dbst.shutappv1.dev:id/chat_attachment_dialog_btn_camera").click();
 		System.out.println("Camera selected");
 //		driver.findElementById("in.dbst.shutappv1.dev:id/chat_attachment_dialog_btn_gallery").click();
+//		driver.findElementByXPath("//android.widget.LinearLayout[@index='3']").click();
 //		System.out.println("Gallery selected");
 		driver.findElementById("com.android.packageinstaller:id/permission_allow_button").click();
 		System.out.println("Camera accessed");
@@ -154,19 +156,21 @@ public class AppiumServer {
 		System.out.println("Photos and media accessesd");
 //		driver.findElementByXPath("//android.widget.LinearLayout[@index='6']").click();
 //		System.out.println("Image uploading");
-		driver.findElementByAccessibilityId("Shutter button").click();
+//		driver.findElementByAccessibilityId("Shutter button").click();
+		driver.findElementByXPath("//GLButton[@text='Shutter']").click(); //--Samsung--//
 		System.out.println("Image captured");
-		driver.findElementByAccessibilityId("Done").click();
+//		driver.findElementByAccessibilityId("Done").click();
+		driver.findElementById("com.sec.android.app.camera:id/okay").click(); //--Samsung--//
 		System.out.println("click on Done");
 		Thread.sleep(5000);
 		boolean flag = true;
 
 		try {
-			new WebDriverWait(driver, 10).until(ExpectedConditions
+			new WebDriverWait(driver, 60).until(ExpectedConditions
 					.invisibilityOfElementLocated(By.id("in.dbst.shutappv1.dev:id/dp_image_progressbar")));
 			System.out.println("Image uploaded");
 		} catch (TimeoutException e) {
-			System.out.println("Image not uploaded in 10 sec");
+			System.out.println("Image not uploaded in 60 sec");
 		}
 
 		WebElement next = driver.findElementById("in.dbst.shutappv1.dev:id/action_next");
