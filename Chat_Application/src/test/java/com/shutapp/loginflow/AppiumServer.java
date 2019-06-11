@@ -135,9 +135,9 @@ public class AppiumServer {
 	@Test(priority = 2)
 	public void EnterUserName() throws MalformedURLException, InterruptedException {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		WebElement toastView = driver.findElementByXPath("//android.widget.Toast[1]");
-		String text = toastView.getAttribute("name");
-		System.out.println("Tost Message is : " + text);
+//		WebElement toastView = driver.findElementByXPath("//android.widget.Toast[1]");
+//		String text = toastView.getAttribute("name");
+//		System.out.println("Tost Message is : " + text);
 		driver.findElementById("in.dbst.shutappv1.dev:id/user_name_text").sendKeys("Sharath");
 		System.out.println("User Name Entered");
 		Thread.sleep(3000);
@@ -149,7 +149,6 @@ public class AppiumServer {
 		System.out.println("Camera selected");
 //		driver.findElementById("in.dbst.shutappv1.dev:id/chat_attachment_dialog_btn_gallery").click();
 //		driver.findElementByXPath("//android.widget.LinearLayout[@index='3']").click();
-//		System.out.println("Gallery selected");
 		driver.findElementById("com.android.packageinstaller:id/permission_allow_button").click();
 		System.out.println("Camera accessed");
 		driver.findElementById("com.android.packageinstaller:id/permission_allow_button").click();
