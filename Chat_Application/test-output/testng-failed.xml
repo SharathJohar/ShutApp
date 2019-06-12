@@ -3,19 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.shutapp.profilepage.ProfilePage">
+      <class name="com.shutapp.sendBulkmessage.CreatePrivateGroup">
         <methods>
-          <include name="MobileNumber"/>
+          <include name="BulkAudios"/>
           <include name="startServer"/>
           <include name="Capabilities"/>
           <include name="BulkImage"/>
-          <include name="EnterUserName"/>
-          <include name="AboutPage"/>
-          <include name="ShutModes"/>
-          <include name="WelCome"/>
-          <include name="CreateGroup"/>
+          <include name="AnonymousBulkImages"/>
+          <include name="BulkTextMessage"/>
+          <include name="AutoDelete"/>
+          <include name="BulkVideo"/>
         </methods>
-      </class> <!-- com.shutapp.profilepage.ProfilePage -->
+      </class> <!-- com.shutapp.sendBulkmessage.CreatePrivateGroup -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
