@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.shutapp.buttomnavbutton;
+package com.shutapp.bottomnavbutton;
 
 /**
  * @author SHARATH
