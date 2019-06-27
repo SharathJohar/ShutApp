@@ -3,18 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.shutapp.sendBulkmessage.CreatePrivateGroup">
+      <class name="com.shutapp.chatsettings.AddMembers">
         <methods>
-          <include name="BulkAudios"/>
           <include name="startServer"/>
           <include name="Capabilities"/>
-          <include name="BulkImage"/>
-          <include name="AnonymousBulkImages"/>
-          <include name="BulkTextMessage"/>
-          <include name="AutoDelete"/>
-          <include name="BulkVideo"/>
+          <include name="MakeGroupAdmins"/>
+          <include name="RemoveUser"/>
         </methods>
-      </class> <!-- com.shutapp.sendBulkmessage.CreatePrivateGroup -->
+      </class> <!-- com.shutapp.chatsettings.AddMembers -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

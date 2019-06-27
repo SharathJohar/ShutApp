@@ -68,11 +68,10 @@ public class ProfilePage extends CreatePrivateGroup {
 		new TouchAction((PerformsTouchActions) driver).press(PointOption.point(scrollStart, Anchor))
 				.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1))).moveTo(PointOption.point(scrollEnd, Anchor))
 				.release().perform();
-
 		Thread.sleep(3000);
 	}
 
-	@Test(priority = 12)
+	//@Test(priority = 12)
 
 	public void AboutPage() throws MalformedURLException, InterruptedException {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -84,7 +83,8 @@ public class ProfilePage extends CreatePrivateGroup {
 		boolean user_image_view = self_profile.isDisplayed();
 		System.out.println("DP is " + user_image_view);
 		driver.findElementById("in.dbst.shutappv1.dev:id/edit_profile").click();
-		MobileElement edit_user_name = driver.findElementById("in.dbst.shutappv1.dev:id/activity_profile_edit_user_name");
+		MobileElement edit_user_name = driver
+				.findElementById("in.dbst.shutappv1.dev:id/activity_profile_edit_user_name");
 		String username_edit = edit_user_name.getText();
 		System.out.println("UserName is: " + username_edit);
 		MobileElement edit_self_profile = driver.findElementById("in.dbst.shutappv1.dev:id/edit_avatar_user_image");
@@ -120,7 +120,6 @@ public class ProfilePage extends CreatePrivateGroup {
 			System.out.println("About Feild Not Updated in 60 sec");
 		}
 		driver.findElementByXPath("//android.widget.RelativeLayout[@index='0']").click();
-
 		for (int i = 0; i < 15; i++) {
 			SwipeScreen(el, driver);
 		}

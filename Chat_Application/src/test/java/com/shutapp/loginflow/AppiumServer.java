@@ -46,11 +46,13 @@ import io.appium.java_client.remote.MobileCapabilityType;
  * 
  */
 public class AppiumServer {
+
 	public AndroidDriver<AndroidElement> driver;
 
 	// This method will start Appium server through command prompt
 	@BeforeSuite
 	public void startServer() {
+
 		Runtime runtime = Runtime.getRuntime();
 		try {
 			runtime.exec(
@@ -79,8 +81,8 @@ public class AppiumServer {
 	public void Capabilities() throws MalformedURLException {
 
 		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "2628f10a7cf6");//  4da52af
-		cap.setCapability("deviceName", "Galaxy J7 Prime");//Mi A2
+		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "2628f10a7cf6");// 4da52af
+		cap.setCapability("deviceName", "Galaxy J7 Prime");// Mi A2
 		cap.setCapability("platformVersion", "8.1.0");
 		cap.setCapability("platformName", "Android");
 		cap.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "in.dbst.shutappv1.dev");
@@ -156,10 +158,10 @@ public class AppiumServer {
 //		driver.findElementByXPath("//android.widget.LinearLayout[@index='6']").click();
 //		System.out.println("Image uploading");
 //		driver.findElementByAccessibilityId("Shutter button").click();
-		driver.findElementByXPath("//GLButton[@text='Shutter']").click(); //--Samsung--//
+		driver.findElementByXPath("//GLButton[@text='Shutter']").click(); // --Samsung--//
 		System.out.println("Image captured");
 //		driver.findElementByAccessibilityId("Done").click();
-		driver.findElementById("com.sec.android.app.camera:id/okay").click(); //--Samsung--//
+		driver.findElementById("com.sec.android.app.camera:id/okay").click(); // --Samsung--//
 		System.out.println("click on Done");
 		Thread.sleep(5000);
 		boolean flag = true;

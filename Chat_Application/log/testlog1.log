@@ -1,0 +1,19 @@
+2019-06-17 12:47:25,189 [main] DEBUG com.shutapp.loginflow.Log4j - This is debug message
+2019-06-17 12:47:25,192 [main] INFO com.shutapp.loginflow.Log4j - This is info message
+2019-06-17 12:47:25,192 [main] WARN com.shutapp.loginflow.Log4j - This is warn message
+2019-06-17 12:47:25,193 [main] FATAL com.shutapp.loginflow.Log4j - This is fatal message
+2019-06-17 12:47:25,193 [main] ERROR com.shutapp.loginflow.Log4j - This is error message
+2019-06-17 12:48:40,988 [main] DEBUG com.shutapp.loginflow.Log4j - This is debug message
+2019-06-17 12:48:40,992 [main] INFO com.shutapp.loginflow.Log4j - This is info message
+2019-06-17 12:48:40,993 [main] WARN com.shutapp.loginflow.Log4j - This is warn message
+2019-06-17 12:48:40,994 [main] FATAL com.shutapp.loginflow.Log4j - This is fatal message
+2019-06-17 12:48:41,019 [main] ERROR com.shutapp.loginflow.Log4j - This is error message
+2019-06-17 13:15:10,998 [main] INFO Log4j - guggu
+2019-06-17 14:51:49,537 [main] INFO com.shutapp.loginflow.Log4j - Sic
+2019-06-17 14:53:11,327 [main] INFO com.shutapp.loginflow.AppiumServer - Sic
+2019-06-17 14:54:22,361 [main] INFO com.shutapp.loginflow.AppiumServer - Sic
+2019-06-17 14:57:00,926 [main] INFO com.shutapp.loginflow.AppiumServer - Appium server started successfully
+2019-06-17 14:58:03,545 [main] INFO com.shutapp.loginflow.AppiumServer - Appium server started successfully
+2019-06-17 14:59:01,057 [main] INFO com.shutapp.loginflow.AppiumServer - Appium server started successfully
+2019-06-17 14:59:34,842 [main] INFO com.shutapp.loginflow.AppiumServer - Appium server started successfully
+2019-06-17 15:00:47,474 [main] INFO com.shutapp.loginflow.AppiumServer - Appium server started successfully
